@@ -1,0 +1,246 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url("/IMG/fondo-principal.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat : no-repeat;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+#menu{
+    display: flex;
+    justify-content: center;
+    height: 15vh;
+}
+
+.opciones{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0;
+}
+
+.opcion{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    color: rgb(250, 250, 250);
+}
+
+.opcion-enlace{
+    text-decoration: none;
+    color: rgb(250, 250, 250);
+    padding: 3vh;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    border-top: 10px solid rgba(255, 250, 250, 0);
+}
+
+.opcion-enlace:hover{
+    border: 1px solid rgb(250, 250, 250);
+    background-color: rgba(3, 25, 38, 0.7);
+}
+
+li{
+    color: rgb(250, 250, 250);
+}
+
+#menu-oculto{
+    display: none;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+#contenido-principal{
+    color: rgb(250, 250, 250);
+    margin-top: 20vh;
+}
+
+#titulo-principal{
+    margin: 0;
+    font-family: Papyrus;
+    font-size: 15vh;
+    display: flex;
+    justify-content: center;
+}
+
+#nombre{
+    margin: 0;
+    font-family: 'Lucida Calligraphy';
+    font-size: 2.5vh;
+    display: flex;
+    justify-content: center;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+#sobre-mi{
+    color: rgb(3, 25, 38);
+    position:absolute;
+    top: 100vh;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+#contacto-principal{
+    background-color: rgb(3, 25, 38);
+    height: 15vh;
+    flex-shrink: 1;
+}
+
+#boton-inicio{
+    background-color: rgba(3, 25, 38, 0.5);
+    height: 10vh;
+    width: 10vh;
+    position: fixed;
+    bottom: 10vh;
+    right: 10vh;
+}
+
+#contacto-principal{
+    color: rgb(250, 250, 250);
+    font-size: 10px;
+    text-align: center;
+}
+
+.enlace-contacto{
+    color: rgb(250, 250, 250);
+    font-size: 20px;
+    text-align: center;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+@media (max-width:1100px){
+    #menu{
+        height: 12.5vh;
+    }
+    .opcion-enlace{
+        font-size: 25px;
+        padding: 2vh;
+    }
+    #contenido-principal{
+        margin-top: 25vh;
+    }
+
+}
+
+@media (max-width:950px){
+    #menu{
+        height: 10vh;
+    }
+    .opcion-enlace{
+        font-size: 20px;
+        padding: 1.5vh;
+    }
+
+    #titulo-principal{
+        font-size: 10vh;
+    }
+    
+    #nombre{
+        font-size: 3vh;
+    }
+    #contenido-principal{
+        margin-top: 27vh;
+    }
+}
+
+@media (max-width:750px){
+    #menu{
+        height: 10vh;
+    }
+    .opcion-enlace{
+        font-size: 15px;
+        padding: 1.5vh;
+    }
+}
+
+@media (max-width:550px){
+    #menu{
+        display: none;
+    }
+    #menu-oculto{
+        position: fixed;
+        display: flex;
+        color: rgb(250, 250, 250);
+        font-family: 'Courier New', Courier, monospace;
+        display: flex;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .barra-menu{
+        position: sticky;
+        background-color: rgb(3, 25, 38);
+        width: 100%;
+        height: 10vh;
+    }
+    #btn-menu{
+        display: none;
+    }
+    .icon-paragraph-center{
+        display: block;
+        display: flex;
+        justify-content: center;
+        width: 5vh;
+        height: 3.5vh;
+        background-color: rgb(3, 25, 38);
+        font-size: 25px;
+        margin: 3vh;
+        position: absolute;
+        top: 0;
+    }
+    .opciones-oculto{
+        margin: 0;
+        display: flex;
+        position: sticky;
+        flex-direction: column;
+        width: 30vh;
+        background-color: rgba(3, 25, 38, 0.7);
+        visibility: hidden;
+        border-bottom: 1px solid rgb(250, 250, 250);
+
+    }
+    #btn-menu:checked ~ .opciones-oculto{
+        visibility: visible;
+    }
+    .opcion-oculto{
+        padding: 0 1rem 0 1rem;
+        border-bottom: 1px solid rgb(250, 250, 250);
+    }
+    .opcion-enlace-oculto{
+        font-size: 15px;
+        padding: 1.5vh;
+        border: unset;
+    }
+    .opcion-enlace-oculto:hover{
+        background-color: unset;
+        border: unset;
+    }
+    .opcion-oculto:hover{
+        background-color: rgba(250, 250, 250, 0.7);
+    }
+
+    #titulo-principal{
+        font-size: 5vh;
+    }
+    
+    #nombre{
+        font-size: 1vh;
+    }
+
+    #contenido-principal{
+        margin-top: 45vh;
+    }
+}
+

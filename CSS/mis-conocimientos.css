@@ -1,0 +1,332 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+#cabecera-principal{
+    height: 16vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(3, 25, 38);
+}
+
+#menu{
+    display: flex;
+    justify-content: center;
+    height: 15vh;
+}
+
+.opciones{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0;
+}
+
+.opcion{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    color: rgb(250, 250, 250);
+}
+
+.opcion-enlace{
+    text-decoration: none;
+    color: rgb(250, 250, 250);
+    padding: 3vh;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    border-top: 10px solid rgba(255, 250, 250, 0);
+}
+
+.opcion-enlace:hover{
+    border: 1px solid rgb(250, 250, 250);
+    background-color: rgba(3, 25, 38, 0.7);
+}
+
+li{
+    color: rgb(250, 250, 250);
+}
+
+#menu-oculto{
+    display: none;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+.titulo{
+    color: rgb(250, 250, 250);
+    background-color: rgb(3, 25, 38);
+    width: 45%;
+    font-size: 50px;
+    text-align: center;
+    margin: 5vh 0 5vh 0;
+    border: 1px solid rgb(250, 250, 250);
+}
+
+.titulo--left{
+    margin-left: 5%;
+}
+
+.titulo--right{
+    margin-left: 50%;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+#contenido-principal{
+    background: linear-gradient(90deg, rgba(70, 129, 137, 0.5), rgb(250,250,250), rgba(70, 129, 137, 0.5));  
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100vh;
+}
+
+#mis-conocimientos{
+    width: 100%;
+
+}
+
+.sub-titulo{
+    color: rgb(3, 25, 38);
+    text-decoration: underline ;
+    font-size: 40px;
+    text-align: center;
+    padding: 1rem;
+}
+
+#herramientas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1.5rem 0 5rem 0;
+}
+
+.lenguaje{
+    font-weight: bold;
+    font-size: 10vh;
+    margin: 1rem;
+    background-color: rgb(244, 233, 205);
+    border: 1px solid rgb(3, 25, 38);
+    border-radius: 2.5rem;
+    height: 30vh;
+    width: 25vh;
+    display: flex;
+    justify-content:center;
+    padding: 7.5vh 0 7.5vh 0;
+}
+
+.lenguaje:hover{
+    background-color: rgb(3, 25, 38);
+}
+
+.lenguaje-img{
+    height: 15vh;
+}
+
+.lenguaje, a{
+    color: rgb(3, 25, 38);
+}
+
+.lenguaje, a:hover{
+    color: rgb(250, 250, 250);
+}
+
+#contacto-principal{
+    background-color: rgb(3, 25, 38);
+    height: 15vh;
+    flex-shrink: 1;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+#boton-inicio{
+    background-color: rgba(3, 25, 38, 0.5);
+    height: 10vh;
+    width: 10vh;
+    position: fixed;
+    bottom: 10vh;
+    right: 10vh;
+}
+
+#contacto-principal{
+    color: rgb(250, 250, 250);
+    font-size: 10px;
+    text-align: center;
+}
+
+.enlace-contacto{
+    color: rgb(250, 250, 250);
+    font-size: 20px;
+    text-align: center;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+@media (max-width:1100px){
+    #menu{
+        height: 12.5vh;
+    }
+    .opcion-enlace{
+        font-size: 25px;
+        padding: 2vh;
+    }
+    #cabecera-principal{
+        height: 14vh;
+    }
+
+}
+
+@media (max-width:950px){
+    #menu{
+        height: 10vh;
+    }
+    .opcion-enlace{
+        font-size: 20px;
+        padding: 1.5vh;
+    }
+
+    #titulo-principal{
+        font-size: 10vh;
+    }
+    
+    #nombre{
+        font-size: 3vh;
+    }
+    #cabecera-principal{
+        height: 12vh;
+    }
+}
+
+@media (max-width:750px){
+    #menu{
+        height: 10vh;
+    }
+    .opcion-enlace{
+        font-size: 15px;
+        padding: 1.5vh;
+    }
+}
+
+@media (max-width:550px){
+    #menu{
+        display: none;
+    }
+    #menu-oculto{
+        display: flex;
+        color: rgb(250, 250, 250);
+        font-family: 'Courier New', Courier, monospace;
+        display: flex;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .barra-menu{
+        position: sticky;
+        background-color: rgb(3, 25, 38);
+        width: 100%;
+        height: 10vh;
+        margin: 1vh;
+        border-bottom: 1px solid rgb(250, 250, 250);
+
+    }
+    #btn-menu{
+        display: none;
+    }
+    .icon-paragraph-center{
+        display: block;
+        display: flex;
+        justify-content: center;
+        width: 5vh;
+        height: 3.5vh;
+        background-color: rgb(3, 25, 38);
+        font-size: 25px;
+        margin: 3vh;
+        position: absolute;
+        top: 0;
+    }
+    .opciones-oculto{
+        margin: 0;
+        display: flex;
+        position:sticky;
+        flex-direction: column;
+        width: 30vh;
+        background-color: rgb(3, 25, 38);
+        visibility: hidden;
+    }
+    #btn-menu:checked ~ .opciones-oculto{
+        visibility: visible;
+    }
+    .opcion-oculto{
+        padding: 0 1rem 0 1rem;
+        border-bottom: 1px solid rgb(250, 250, 250);
+    }
+    .opcion-enlace-oculto{
+        font-size: 15px;
+        padding: 1.5vh;
+        border: unset;
+    }
+    .opcion-enlace-oculto:hover{
+        background-color: unset;
+        border: unset;
+    }
+    .opcion-oculto:hover{
+        background-color: rgba(250, 250, 250, 0.7);
+    }
+
+    #titulo-principal{
+        font-size: 5vh;
+    }
+    
+    #nombre{
+        font-size: 1vh;
+    }
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+@media (max-width:800px){
+
+    .titulo{
+        font-size: 20px;
+    }
+
+    .sub-titulo{
+        font-size: 30px;
+    }
+
+    .lenguaje{
+        font-size: 50px;
+        width: 25%;
+        height: 30%;
+        padding: 0;
+        border-radius: 25%;
+    }
+    .lenguaje-img{
+        height: 5vh;
+    }
+
+    #boton-inicio{
+        background-color: rgba(3, 25, 38, 0.5);
+        height: 5vh;
+        width: 5vh;
+        position: fixed;
+        bottom: 10vh;
+        right: 5vh;
+    }
+}
