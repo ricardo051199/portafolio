@@ -12,9 +12,12 @@ body{
 
 #cabecera-principal{
     height: 16vh;
+    width: 100%;
     display: flex;
+    position: fixed;
     flex-direction: column;
     background-color: rgb(3, 25, 38);
+    border-bottom: 2px solid rgb(250, 250, 250);
 }
 
 #menu{
@@ -35,6 +38,8 @@ body{
     justify-content: center;
     list-style: none;
     color: rgb(250, 250, 250);
+    position: relative;
+    margin: 5px;
 }
 
 .opcion-enlace{
@@ -43,20 +48,38 @@ body{
     padding: 3vh;
     font-size: 30px;
     font-family: 'Courier New', Courier, monospace;
-    border-top: 10px solid rgba(255, 250, 250, 0);
+}
+
+.opcion-enlace:after{
+    content: "";
+    width: 0;
+    height: 10px;
+    background-color: rgb(250, 250, 250);
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transition: all .5s;
+    will-change:width;
+}
+
+.opcion-enlace:hover:after{
+    width: 100%;
+    right: 0;
 }
 
 .opcion-enlace:hover{
-    border: 1px solid rgb(250, 250, 250);
-    background-color: rgba(3, 25, 38, 0.7);
-}
-
-li{
     color: rgb(250, 250, 250);
+    background-color: rgba(250, 250, 250, 0.2);
+    transition: all 1s;
 }
 
 #menu-oculto{
     display: none;
+}
+
+.activo{
+    background-color: rgb(250, 250, 250 );
+    color: rgb(3, 25, 38);
 }
 
 /*-----------------------------------------------------------------------------------------------------*/
@@ -142,27 +165,6 @@ li{
     text-align: center;
 }
 
-.seccion-contacto{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0rem 0 10rem 0;
-}
-
-.contacto{
-    width: 3rem;
-    height: 3rem;
-    padding: 0.5rem;
-    background-size: contain;
-}
-
-.contacto:hover{
-    background-color: rgba(3, 25, 38, 0.5);
-    border-radius: 1rem;
-}
-
 /*-----------------------------------------------------------------------------------------------------*/
 
 #formacion-academica{
@@ -201,14 +203,91 @@ li{
 
 /*-----------------------------------------------------------------------------------------------------*/
 
-#boton-inicio{
-    background-color: rgba(3, 25, 38, 0.5);
-    height: 10vh;
-    width: 10vh;
+.redes-sociales{
     position: fixed;
-    bottom: 10vh;
-    right: 10vh;
+    top:30%;
+    left: 0;
+    background-color: rgba(3, 25, 38, 0.5);
+    margin: 0;
 }
+
+.redes{
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+}
+
+.redes a{
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.icon-contacto{
+    color: rgb(250, 250, 250 );
+    margin: 0;
+    transition: .5s;
+    z-index: 3;    
+}
+
+.redes li a {
+    padding: 1rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.redes li a .icon {
+    position: relative;
+    color: #262626;
+    transition: .5s;
+    z-index: 3;
+}
+
+.redes li a:hover .icon {
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+.redes li a:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    z-index: 2;
+}
+
+.redes li a:hover:before {
+    top: 0;
+}
+
+.redes li:nth-child(1) a:before{
+    background: black;
+}
+
+ul li:nth-child(2) a:before{
+    background: linear-gradient(135deg, #002296, #8200bf, #c0007a, #ea0c5f, #ff5341, #ff8820, #f6ba00);
+}
+
+ul li:nth-child(3) a:before{
+    background: #0077b5;
+}
+
+ul li:nth-child(4) a:before{
+    background: rgb(59, 89, 152);
+}
+
+ul li:nth-child(5) a:before{
+    background: rgb(0, 187, 45);
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
 
 #contacto-principal{
     background-color: rgb(3, 25, 38);
@@ -225,8 +304,32 @@ li{
 
 /*-----------------------------------------------------------------------------------------------------*/
 
+#boton-inicio{
+    text-decoration: none;
+    color: rgb(250, 250, 250);
+    background-color: rgba(3, 25, 38, 0.5);
+    border-radius: 50%;
+    border: 1px solid rgb(250, 250, 250);
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    width: 10vh;
+    position: fixed;
+    bottom: 10vh;
+    right: 10vh; 
 
-@media (max-width:1100px){
+}
+
+.icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 35px;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+@media (max-width:1147px){
     #menu{
         height: 12.5vh;
     }
@@ -244,9 +347,19 @@ li{
     #menu{
         height: 10vh;
     }
+
     .opcion-enlace{
-        font-size: 20px;
         padding: 1.5vh;
+    }
+
+    .opcion-enlace, .icon-home3{
+        font-size: 20px;
+        height: 2.5rem;
+    }
+
+    .icon-home3{
+        position: relative;
+        bottom: 1vh;
     }
 
     #titulo-principal{
@@ -267,6 +380,15 @@ li{
     }
     .opcion-enlace{
         font-size: 15px;
+        padding: 1.5vh;
+    }
+}
+@media (max-width:610px){
+    #menu{
+        height: 10vh;
+    }
+    .opcion-enlace{
+        font-size: 13.5px;
         padding: 1.5vh;
     }
 }

@@ -72,7 +72,7 @@ li{
     justify-content: center;
 }
 
-#nombre{
+#presentacion{
     margin: 0;
     font-family: 'Lucida Calligraphy';
     font-size: 2.5vh;
@@ -146,7 +146,7 @@ li{
         font-size: 10vh;
     }
     
-    #nombre{
+    #presentacion{
         font-size: 3vh;
     }
     #contenido-principal{
@@ -235,7 +235,7 @@ li{
         font-size: 5vh;
     }
     
-    #nombre{
+    #presentacion{
         font-size: 1vh;
     }
 

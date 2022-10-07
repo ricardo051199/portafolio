@@ -85,6 +85,7 @@ li{
 #contenido-principal{
     background: linear-gradient(90deg, rgba(70, 129, 137, 0.5), rgb(250,250,250), rgba(70, 129, 137, 0.5));  
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    bottom: 15vh;
 }
 
 #mis-trabajos{
@@ -102,22 +103,26 @@ li{
 
 #proyectos{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content:center;
+    margin: 1%;
 }
 
 .proyecto{
-    font-weight: bold;
-    font-size: 5vh;
-    margin: 1rem;
-    background-color: rgb(244, 233, 205);
-    border: 1px solid rgb(3, 25, 38);
-    border-radius: 2.5rem;
-    height: 20vh;
-    width: 97.5%;
+    width: 60vh;
+    height: 25vh;
     display: flex;
-    justify-content:center;
-    padding: 7.5vh 0 7.5vh 0;
+    background-size: cover;
+    border-radius: 1.5rem;
+    margin: 1rem;
+}
+
+.proyecto-manual{
+    background-image: url("/IMG/manual.jpg");
+}
+
+.proyecto-agenda{
+    background-image: url("/IMG/agenda.jpg");
 }
 
 .proyecto-enlace{
@@ -148,16 +153,10 @@ a{
 
 /*-----------------------------------------------------------------------------------------------------*/
 
-#boton-inicio{
-    background-color: rgba(3, 25, 38, 0.5);
-    height: 10vh;
-    width: 10vh;
-    position: fixed;
-    bottom: 10vh;
-    right: 10vh;
-}
-
 #contacto-principal{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     color: rgb(250, 250, 250);
     background-color: rgb(3, 25, 38);
     font-size: 10px;
